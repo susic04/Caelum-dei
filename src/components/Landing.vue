@@ -48,6 +48,7 @@ onMounted(() => {
   font-size: 5rem;
   font-weight: 200;
   margin: 0;
+  
 }
 
 .podnaslov{
@@ -58,7 +59,8 @@ onMounted(() => {
 }
 
 .landing-paragraf{
-  margin-bottom: 20%;
+  margin-bottom: 45%;
+  font-size: 1.125rem;  
 }
 
 /* LOGO */
@@ -66,7 +68,7 @@ onMounted(() => {
   height: 70%;
   width: 40%;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
