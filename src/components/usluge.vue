@@ -66,7 +66,7 @@ onUnmounted(() => {
 <style scoed>
 /* SEKCIJA */
 .usluge {
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,13 +76,14 @@ onUnmounted(() => {
 .slider {
   width: 80vw;
   overflow: hidden;
+  border-radius: 10%;
 }
 
 /* TRAKA KOJA SE MIČE */
 .track {
   display: flex;
   gap: 160px;                 /* ⬅️ nema gužve */
-  animation: move 45s linear infinite;
+  animation: move 15s linear infinite;
 }
 
 /* SLIKE */
@@ -90,6 +91,7 @@ onUnmounted(() => {
   width: 220px;
   height: auto;
   flex-shrink: 0;
+  border-radius: 5%;
 
   transform: scale(0.7);
   transition: transform 0.2s ease-out;
