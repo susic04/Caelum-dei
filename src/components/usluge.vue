@@ -11,10 +11,10 @@ import slika_6 from '../assets/slika_6.jpg'
 const slike = [slika_1, slika_2, slika_3, slika_4, slika_5, slika_6]
 
 let rafId
-
+const isMobile = window.innerWidth < 768
 onMounted(() => {
   const slides = document.querySelectorAll('.slide')
-
+  if (isMobile) return
   const updateScale = () => {
     const center = window.innerWidth / 2
 
