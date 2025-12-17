@@ -15,7 +15,6 @@ onMounted(() => {
   <section class="landing" :class="{ active }">
     <div class="landing-content">
       
-      <!-- LOGO CENTAR -->
       <div class="logo-container">
         <img
           :src="logo"
@@ -24,12 +23,9 @@ onMounted(() => {
         />
       </div>
 
-      <!-- TEKST ISPOD -->
       <div class="tekst-landing">
         <h1 class="naslov">Caelum Dei</h1>
         <h3 class="podnaslov">OD NITI DO NEBA</h3>
-    
-        
       </div>
 
     </div>
@@ -37,7 +33,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* LAYOUT */
 .landing {
   position: relative;
   height: 100vh;
@@ -47,9 +42,9 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* GLAVNI CONTAINER */
 .landing-content {
   display: flex;
   flex-direction: column;
@@ -67,7 +62,6 @@ onMounted(() => {
   opacity: 1;
 }
 
-/* === LOGO === */
 .logo-container {
   transform: scale(0.8);
   opacity: 0;
@@ -91,7 +85,6 @@ onMounted(() => {
   transform: scale(1.05);
 }
 
-/* === TEKST === */
 .tekst-landing {
   display: flex;
   flex-direction: column;
@@ -107,7 +100,6 @@ onMounted(() => {
   opacity: 1;
 }
 
-/* NASLOVI */
 .naslov {
   font-family: 'Dancing Script', cursive;
   font-size: 5rem;
@@ -128,10 +120,14 @@ onMounted(() => {
   font-family: 'Georgia', serif;
 }
 
-/* RESPONSIVE */
+/* TABLET */
 @media (max-width: 1024px) {
+  .landing-content {
+    gap: 2.5rem;
+  }
+
   .logo-landing {
-    height: 38vh;
+    height: 35vh;
   }
   
   .naslov {
@@ -140,16 +136,18 @@ onMounted(() => {
   
   .podnaslov {
     font-size: 1.5rem;
+    letter-spacing: 3px;
   }
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
   .landing-content {
     gap: 2rem;
   }
 
   .logo-landing {
-    height: 30vh;
+    height: 28vh;
   }
   
   .naslov {
@@ -157,22 +155,31 @@ onMounted(() => {
   }
   
   .podnaslov {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 3px;
   }
 }
 
 @media (max-width: 480px) {
+  .landing {
+    padding: 0 1rem;
+  }
+
+  .landing-content {
+    gap: 1.5rem;
+  }
+
   .logo-landing {
-    height: 25vh;
+    height: 22vh;
   }
   
   .naslov {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
   }
   
   .podnaslov {
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 2px;
   }
 }

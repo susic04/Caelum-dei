@@ -7,7 +7,7 @@ const scrolled = ref(false)
 onMounted(() => {
   setTimeout(() => {
     visible.value = true
-  }, 500) // ✅ Pojavljuje se nakon što landing počne animaciju
+  }, 500)
   
   window.addEventListener('scroll', handleScroll)
 })
@@ -47,7 +47,6 @@ const handleScroll = () => {
 </template>
 
 <style scoped>
-/* NAV CONTAINER */
 .nav {
   position: fixed;
   top: 20px;
@@ -55,31 +54,28 @@ const handleScroll = () => {
   transform: translateX(-50%) translateY(-100px);
   z-index: 1000;
   
-  background: rgba(255, 255, 255, 0.85); /* ✅ Viša opacity */
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-radius: 50px;
   padding: 12px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* ✅ Suptilni border */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* ✅ Jača sjena */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* Animacija ulaska */
 .nav.visible {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
 
-/* Kada se skroluje */
 .nav.scrolled {
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* MENU */
 .menu {
   display: flex;
   gap: 0.5rem;
@@ -94,7 +90,6 @@ const handleScroll = () => {
   position: relative;
 }
 
-/* MENU ITEMS */
 .menu-item {
   display: flex;
   align-items: center;
@@ -104,7 +99,7 @@ const handleScroll = () => {
   height: 48px;
   
   text-decoration: none;
-  color: #2c3e50; /* ✅ Tamna boja ikona */
+  color: #2c3e50;
   
   border-radius: 50%;
   background: transparent;
@@ -126,7 +121,6 @@ const handleScroll = () => {
   background: rgba(44, 62, 80, 0.15);
 }
 
-/* IKONE */
 .menu-item i {
   font-size: 18px;
   margin: 0;
@@ -140,7 +134,6 @@ const handleScroll = () => {
   transform: scale(1.15);
 }
 
-/* TOOLTIP */
 .tooltip {
   position: absolute;
   bottom: -38px;
@@ -180,12 +173,41 @@ const handleScroll = () => {
   transform: translateX(-50%) scale(1);
 }
 
-/* RESPONSIVE */
+/* TABLET */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .menu {
+    gap: 0.4rem;
+  }
+
+  .menu-item {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-item i {
+    font-size: 17px;
+  }
+
+  .tooltip {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .nav {
     top: auto;
     bottom: 20px;
-    padding: 10px 20px;
+    padding: 8px 16px;
+  }
+
+  .nav.visible {
+    transform: translateX(-50%) translateY(0);
   }
   
   .menu {
@@ -193,8 +215,8 @@ const handleScroll = () => {
   }
   
   .menu-item {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
   
   .menu-item i {
@@ -203,6 +225,30 @@ const handleScroll = () => {
   
   .tooltip {
     display: none;
+  }
+
+  .menu-item:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    bottom: 15px;
+    padding: 6px 12px;
+  }
+
+  .menu {
+    gap: 0.2rem;
+  }
+
+  .menu-item {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-item i {
+    font-size: 15px;
   }
 }
 </style>
