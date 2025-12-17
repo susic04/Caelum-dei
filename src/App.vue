@@ -1,12 +1,14 @@
 <script setup>
 import Nav from './components/Nav.vue'
 import Landing from './components/Landing.vue'
+import Usluge from './components/usluge.vue'
 </script>
 
 <template>
   <div class="app">
     <Nav />
     <Landing />
+    <Usluge />
   </div>
 </template>
 
@@ -16,11 +18,13 @@ import Landing from './components/Landing.vue'
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* APP CONTAINER */

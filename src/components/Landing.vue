@@ -28,7 +28,7 @@ onMounted(() => {
       <div class="tekst-landing">
         <h1 class="naslov">Caelum Dei</h1>
         <h3 class="podnaslov">OD NITI DO NEBA</h3>
-        
+    
         
       </div>
 
