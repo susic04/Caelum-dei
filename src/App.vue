@@ -2,7 +2,9 @@
 import Nav from './components/Nav.vue'
 import Landing from './components/Landing.vue'
 import Usluge from './components/usluge.vue'
-import usluga_1 from './components/usluga_1.vue';
+import usluga_1 from './components/usluga_1.vue'
+import usluga_2 from './components/usluga_2.vue'
+import usluga_3 from './components/usluga_3.vue';
 </script>
 
 <template>
@@ -11,6 +13,8 @@ import usluga_1 from './components/usluga_1.vue';
     <Landing />
     <Usluge />
     <usluga_1 />
+    <usluga_2 />
+    <usluga_3 />
   </div>
 </template>
 

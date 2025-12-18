@@ -1,32 +1,32 @@
-<!-- PRVI KOMPONENT (slika levo, opis desno) -->
 <script setup>
-import { ref } from 'vue'
-import slika_6 from '../assets/slika_6.jpg'
+    import slika_8 from '../assets/slika_8.jpeg'
+    import { ref } from 'vue'
 </script>
 
 <template>
-  <section id="usluga_1" class="usluga_1">
-    <div class="okvir">
-      <img :src="slika_6" class="slika_6" alt="Zahvalnice" />
-      <div class="slika_6_opis">
-        <div class="opis">
-          <h1 class="naslov">Zahvalnice</h1>
-          <p class="tekst">
-            Svaki komad nastaje ručno,<br>
-            s pažnjom i molitvom.<br>
-            Drvo se reže i obrađuje s ljubavlju,<br>
-            perlice se pažljivo nižu, a svaka kartica<br>
-            slaže se korak po korak 
-          </p>
+    <section id="usluga_3" class="usluga_3">
+        <div class="okvir">
+            <img :src="slika_8" class="slika_8" alt="Privjesci" />
+            <div class="slika_8_opis">
+                <div class="opis">
+                <h1 class="naslov">Privjesci za ključeve</h1>
+                <p class="tekst">
+                    Kuglice se nižu s pažnjom,<br>
+                    svaka molitva utkana u rad.<br>
+                    Male duhovne pratioce stvaram ručno,<br>
+                    spajajući vjeru i svakodnevicu,<br>
+                    privjesci koji nose mir i zaštitu
+                </p>
+                </div>
+                <button class="dugme">Naruči</button>
+            </div>
         </div>
-        <button class="dugme">Naruči</button>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
+
 <style scoped>
-.usluga_1 {
+.usluga_3 {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 50%, #d4dce8 100%);
   min-width: 100vw;
@@ -45,13 +45,13 @@ import slika_6 from '../assets/slika_6.jpg'
   border-radius: 2%;
 }
 
-.slika_6 {
+.slika_8 {
   height: 80%;
   width: 50%;
   object-fit: cover;
 }
 
-.slika_6_opis {
+.slika_8_opis {
   flex-direction: column;
   display: flex;
   width: 50%;
@@ -114,7 +114,7 @@ import slika_6 from '../assets/slika_6.jpg'
     width: 85vw;
   }
 
-  .slika_6_opis {
+  .slika_8_opis {
     padding: 3rem 2.5rem;
   }
 
@@ -134,7 +134,7 @@ import slika_6 from '../assets/slika_6.jpg'
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .usluga_1 {
+  .usluga_3 {
     padding: 1rem;
   }
 
@@ -143,12 +143,12 @@ import slika_6 from '../assets/slika_6.jpg'
     width: 90vw;
   }
 
-  .slika_6 {
+  .slika_8 {
     width: 100%;
     height: 300px;
   }
 
-  .slika_6_opis {
+  .slika_8_opis {
     width: 100%;
     padding: 2.5rem 2rem;
   }
@@ -178,11 +178,11 @@ import slika_6 from '../assets/slika_6.jpg'
     width: 95vw;
   }
 
-  .slika_6 {
+  .slika_8 {
     height: 250px;
   }
 
-  .slika_6_opis {
+  .slika_8_opis {
     padding: 2rem 1.5rem;
   }
 

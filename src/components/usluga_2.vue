@@ -1,34 +1,34 @@
-<!-- PRVI KOMPONENT (slika levo, opis desno) -->
+<!-- DRUGI KOMPONENT (opis levo, slika desno) -->
 <script setup>
+import slika_7 from '../assets/slika_7.jpeg'
 import { ref } from 'vue'
-import slika_6 from '../assets/slika_6.jpg'
 </script>
 
 <template>
-  <section id="usluga_1" class="usluga_1">
+  <section id="usluga_2" class="usluga_2">
     <div class="okvir">
-      <img :src="slika_6" class="slika_6" alt="Zahvalnice" />
-      <div class="slika_6_opis">
+      <div class="slika_7_opis">
         <div class="opis">
-          <h1 class="naslov">Zahvalnice</h1>
+          <h1 class="naslov">Privjesci za sat</h1>
           <p class="tekst">
-            Svaki komad nastaje ručno,<br>
-            s pažnjom i molitvom.<br>
-            Drvo se reže i obrađuje s ljubavlju,<br>
-            perlice se pažljivo nižu, a svaka kartica<br>
-            slaže se korak po korak 
+            Svaki privjesak za sat izrađuje se ručno,<br>
+            s naglaskom na kvalitetu i preciznost.<br>
+            Pažljivo odabrani detalji skladno se povezuju,<br>
+            kako bi upotpunili izgled sata, a svaki privjesak<br>
+            nastaje promišljeno, korak po korak. 
           </p>
         </div>
         <button class="dugme">Naruči</button>
       </div>
+      <img :src="slika_7" class="slika_7" alt="satovi" />
     </div>
   </section>
 </template>
 
 <style scoped>
-.usluga_1 {
+.usluga_2 {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 50%, #d4dce8 100%);
+  background-color: white;
   min-width: 100vw;
   display: flex;
   justify-content: center;
@@ -45,17 +45,17 @@ import slika_6 from '../assets/slika_6.jpg'
   border-radius: 2%;
 }
 
-.slika_6 {
+.slika_7 {
   height: 80%;
   width: 50%;
   object-fit: cover;
 }
 
-.slika_6_opis {
+.slika_7_opis {
   flex-direction: column;
   display: flex;
   width: 50%;
-  background-color: white;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 50%, #d4dce8 100%);
   justify-content: center;
   padding: 4rem 3rem;
 }
@@ -114,7 +114,7 @@ import slika_6 from '../assets/slika_6.jpg'
     width: 85vw;
   }
 
-  .slika_6_opis {
+  .slika_7_opis {
     padding: 3rem 2.5rem;
   }
 
@@ -134,7 +134,7 @@ import slika_6 from '../assets/slika_6.jpg'
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .usluga_1 {
+  .usluga_2 {
     padding: 1rem;
   }
 
@@ -143,12 +143,13 @@ import slika_6 from '../assets/slika_6.jpg'
     width: 90vw;
   }
 
-  .slika_6 {
+  .slika_7 {
     width: 100%;
     height: 300px;
+    order: -1; /* Ovo stavlja sliku iznad opisa na mobilnom */
   }
 
-  .slika_6_opis {
+  .slika_7_opis {
     width: 100%;
     padding: 2.5rem 2rem;
   }
@@ -178,11 +179,11 @@ import slika_6 from '../assets/slika_6.jpg'
     width: 95vw;
   }
 
-  .slika_6 {
+  .slika_7 {
     height: 250px;
   }
 
-  .slika_6_opis {
+  .slika_7_opis {
     padding: 2rem 1.5rem;
   }
 
