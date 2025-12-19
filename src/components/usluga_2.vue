@@ -1,4 +1,3 @@
-<!-- DRUGI KOMPONENT (opis levo, slika desno) -->
 <script setup>
 import slika_7 from '../assets/slika_7.jpeg'
 import { ref } from 'vue'
@@ -112,6 +111,11 @@ import { ref } from 'vue'
 @media (max-width: 1024px) {
   .okvir {
     width: 85vw;
+    height: auto;
+  }
+
+  .slika_7 {
+    height: 100%;
   }
 
   .slika_7_opis {
@@ -141,12 +145,13 @@ import { ref } from 'vue'
   .okvir {
     flex-direction: column;
     width: 90vw;
+    height: auto;
   }
 
   .slika_7 {
     width: 100%;
     height: 300px;
-    order: -1; /* Ovo stavlja sliku iznad opisa na mobilnom */
+    order: -1;
   }
 
   .slika_7_opis {

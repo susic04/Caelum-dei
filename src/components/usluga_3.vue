@@ -112,6 +112,11 @@
 @media (max-width: 1024px) {
   .okvir {
     width: 85vw;
+    height: auto;
+  }
+
+  .slika_8 {
+    height: 100%;
   }
 
   .slika_8_opis {
@@ -141,6 +146,7 @@
   .okvir {
     flex-direction: column;
     width: 90vw;
+    height: auto;
   }
 
   .slika_8 {

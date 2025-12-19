@@ -1,4 +1,3 @@
-<!-- PRVI KOMPONENT (slika levo, opis desno) -->
 <script setup>
 import { ref } from 'vue'
 import slika_6 from '../assets/slika_6.jpg'
@@ -112,6 +111,11 @@ import slika_6 from '../assets/slika_6.jpg'
 @media (max-width: 1024px) {
   .okvir {
     width: 85vw;
+    height: auto;
+  }
+
+  .slika_6 {
+    height: 100%;
   }
 
   .slika_6_opis {
@@ -141,6 +145,7 @@ import slika_6 from '../assets/slika_6.jpg'
   .okvir {
     flex-direction: column;
     width: 90vw;
+    height: auto;
   }
 
   .slika_6 {
