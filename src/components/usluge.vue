@@ -14,21 +14,7 @@ let rafId
 const isMobile = window.innerWidth < 768
 onMounted(() => {
   const slides = document.querySelectorAll('.slide')
-  if (isMobile) return
-  const updateScale = () => {
-    const center = window.innerWidth / 2
-
-    slides.forEach(slide => {
-      const rect = slide.getBoundingClientRect()
-      const slideCenter = rect.left + rect.width / 2
-      const distance = Math.abs(center - slideCenter)
-
-      const scale = Math.max(0.65, 1.15 - distance / 700)
-      slide.style.transform = `scale(${scale})`
-    })
-
-    rafId = requestAnimationFrame(updateScale)
-  }
+  
 
   updateScale()
 })
@@ -71,25 +57,25 @@ onUnmounted(() => {
 }
 
 .slider {
-  width: 80vw;
+  width: 100vw;
   overflow: hidden;
-  border-radius: 10%;
+
 }
 
 .track {
   display: flex;
-  gap: 160px;
+  gap: 60px;
   animation: move 15s linear infinite;
 }
 
 .slide {
   width: 220px;
   height: auto;
-  flex-shrink: 0;
-  border-radius: 5%;
-  transform: scale(0.7);
-  transition: transform 0.2s ease-out;
   will-change: transform;
+}
+
+.slider:hover .track {
+  animation-play-state: paused;
 }
 
 @keyframes move {
