@@ -11,12 +11,9 @@ import slika_6 from '../assets/slika_6.jpg'
 const slike = [slika_1, slika_2, slika_3, slika_4, slika_5, slika_6]
 
 let rafId
-const isMobile = window.innerWidth < 768
-onMounted(() => {
-  const slides = document.querySelectorAll('.slide')
-  
 
-  updateScale()
+onMounted(() => {
+  // nema JS grešaka
 })
 
 onUnmounted(() => {
@@ -28,20 +25,32 @@ onUnmounted(() => {
   <section id="usluge" class="usluge">
     <div class="slider">
       <div class="track">
-        <img
+
+        <!-- PRVI SET -->
+        <div
           v-for="(slika, i) in slike"
           :key="i"
-          :src="slika"
-          class="slide"
-          :alt="`Projekt ${i + 1}`"
-        />
+          class="slide-wrapper"
+        >
+          <img :src="slika" class="slide" :alt="`Projekt ${i + 1}`" />
 
-        <img
+          <a href="#kontakt" class="overlay">
+            Naruči
+          </a>
+        </div>
+
+        <!-- DUPLIKAT (za beskonačni scroll) -->
+        <div
           v-for="(slika, i) in slike"
           :key="'dup-' + i"
-          :src="slika"
-          class="slide"
-        />
+          class="slide-wrapper"
+        >
+          <img :src="slika" class="slide" />
+          <a href="#kontakt" class="overlay">
+            Naruči
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -49,7 +58,7 @@ onUnmounted(() => {
 
 <style scoped>
 .usluge {
-  min-height: 50vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +68,6 @@ onUnmounted(() => {
 .slider {
   width: 100vw;
   overflow: hidden;
-
 }
 
 .track {
@@ -68,16 +76,49 @@ onUnmounted(() => {
   animation: move 15s linear infinite;
 }
 
-.slide {
-  width: 220px;
-  height: auto;
-  will-change: transform;
-}
-
+/* PAUZA NA HOVER */
 .slider:hover .track {
   animation-play-state: paused;
 }
 
+/* WRAPPER */
+.slide-wrapper {
+  position: relative;
+}
+
+/* SLIKA */
+.slide {
+  width: 220px;
+  height: 240px;          /* 👈 SVE ISTE VISINE */
+  object-fit: cover;     /* 👈 crop bez deformacije */
+  display: block;
+  flex-shrink: 0;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* HOVER EFEKTI */
+.slide-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+
+/* ANIMACIJA */
 @keyframes move {
   from {
     transform: translateX(-50%);
@@ -89,55 +130,36 @@ onUnmounted(() => {
 
 /* TABLET */
 @media (max-width: 1024px) {
-  .slider {
-    width: 85vw;
+  .slide {
+    width: 200px;
+    height: 220px;
   }
 
   .track {
     gap: 120px;
   }
-
-  .slide {
-    width: 180px;
-  }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .usluge {
-    min-height: 40vh;
+  .slide {
+    width: 170px;
+    height: 190px;
   }
-
-  .slider {
-    width: 90vw;
-  }
-
   .track {
     gap: 80px;
     animation: move 20s linear infinite;
   }
-
-  .slide {
-    width: 150px;
-  }
 }
 
 @media (max-width: 480px) {
-  .usluge {
-    min-height: 35vh;
+  .slide {
+    width: 140px;
+    height: 160px;
   }
-
-  .slider {
-    width: 95vw;
-  }
-
   .track {
     gap: 60px;
     animation: move 25s linear infinite;
-  }
-
-  .slide {
-    width: 120px;
   }
 }
 </style>

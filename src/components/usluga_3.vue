@@ -1,6 +1,7 @@
 <script setup>
     import slika_8 from '../assets/slika_8.jpeg'
     import { ref } from 'vue'
+    const emit = defineEmits(['naruci'])
 </script>
 
 <template>
@@ -18,7 +19,9 @@
                     privjesci koji nose mir i zaštitu
                 </p>
                 </div>
-                <button class="dugme">Naruči</button>
+                <a href="#kontakt" class="dugme">
+                  Naruči
+                </a>
             </div>
         </div>
     </section>
@@ -96,6 +99,7 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
   align-self: flex-start;
+  text-decoration: none;
 }
 
 .dugme:hover {
