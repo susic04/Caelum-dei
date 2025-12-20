@@ -39,7 +39,7 @@
         </div>
         <div class="footer">
             <hr></hr>
-            <p class="tekst">© 2024 Caelum Dei.</p>
+            <p class="tekst">© 2025 Caelum Dei.</p>
         </div>
     </div>
  </template>
